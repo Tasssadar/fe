@@ -1,0 +1,13 @@
+version: "3.0"
+services:
+
+  tests:
+    build: .
+    environment:
+      - TEST_POSTGRESQL_URL=pq://postgres:heslo@postgres:5432/databaze
+
+  postgres:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_PASSWORD=heslo
+      - POSTGRES_DB=databaze
